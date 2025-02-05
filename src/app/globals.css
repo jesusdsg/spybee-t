@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: #f5f5f5;
   --foreground: #171717;
   --border-radius: 20px;
   --gray-light: #e6e6e6;
@@ -40,4 +40,28 @@ body {
 .form-item {
   display: flex;
   flex-direction: column;
+}
+
+.detail-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-box h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+}
+
+.icon {
+  fill: "#e6e6e6";
+  height: 20px;
+  width: 20px;
 }

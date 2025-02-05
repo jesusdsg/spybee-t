@@ -10,11 +10,17 @@ const getInitials = (name: string, lastname: string) => {
   return `${name.charAt(0)}${lastname.charAt(0)}`.toUpperCase();
 };
 
+const colors = ["#fff5d7", "#ffebaf"];
+
 export const ProjectTeam: React.FC<ProjectTeamProps> = ({ team }) => {
   return (
     <div className={styles.container}>
       {team.slice(0, 2).map((member, index) => (
-        <div className={styles.hexagon} key={index}>
+        <div
+          className={styles.hexagon}
+          key={index}
+          style={{ backgroundColor: colors[index] }}
+        >
           {getInitials(member.name, member.lastName)}
         </div>
       ))}

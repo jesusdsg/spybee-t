@@ -1,0 +1,159 @@
+.headerContainer {
+  padding: 0rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.headerContainer h4 {
+  color: #414146;
+}
+
+.container {
+  margin: 1rem;
+}
+
+.panelContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0rem;
+  justify-content: space-between;
+}
+
+.panelContainer h1 {
+  margin: 0;
+}
+
+.panelSide {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 50%;
+}
+
+.searchInputContainer {
+  border-radius: 5px;
+  border: 1px solid #fac30f;
+  padding: 1rem 0.5rem;
+  width: 300px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonCreate {
+  border-radius: 5px;
+  background-color: #fac30f;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  border: none;
+  justify-content: space-between;
+  color: #414146;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  transition-duration: 0.3s;
+}
+
+.buttonCreate:hover {
+  background-color: #ecb80d;
+}
+
+.searchInputContainer:focus-within {
+  outline: 2px solid #fac30f;
+}
+
+.panelList {
+  background-color: #fff;
+  position: absolute;
+  left: -300;
+  top: 40;
+  padding: 0.5rem;
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  z-index: 10;
+}
+
+.panelList button {
+  border: none !important;
+  background-color: transparent;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.searchInput {
+  font-size: 18px;
+  border: none;
+  width: 90%;
+}
+
+.searchInput:focus {
+  border: none;
+  outline: none;
+}
+
+.panelButtonsContainer {
+  display: flex;
+  position: relative;
+  border-radius: 2px;
+  border: 1px solid #e6e6e6;
+}
+
+.panelButtonsContainer button {
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-right: 1px solid #e6e6e6;
+}
+
+.panelButtonsContainer button:last-child {
+  border-right: none;
+}
+
+.panelButtonsContainer button:hover {
+  background-color: #e6e6e6;
+}
+
+.count {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  padding: 0rem 1rem;
+}
+
+.paginationContainer {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.paginationContainer button {
+  border: none;
+  border: 1px solid #ecb80d;
+  width: 35px;
+  height: 35px;
+  background-color: #fac30f;
+  border-radius: 5px;
+}
+
+.paginationContainer button:disabled {
+  background-color: #e6e6e6;
+  border: 1px solid #d1d1d1;
+}
+.paginationContainer button:hover {
+  background-color: #ecb80d;
+}
+
+.notFound {
+  width: 100%;
+  margin: 2rem 1rem;
+}

@@ -18,10 +18,10 @@ const Dashboard = () => {
   if (!isAuthenticated) return null;
 
   return (
-    <div style={{ backgroundColor: "#d1d1d1" }}>
-      <h1>Welcome, {user}</h1>
-      <ProjectsList />
-      <button onClick={() => logout()}>Logout</button>
+    <div>
+      <div className="project-container">
+        <ProjectsList />
+      </div>
     </div>
   );
 };

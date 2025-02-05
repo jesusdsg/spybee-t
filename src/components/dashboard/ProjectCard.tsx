@@ -37,6 +37,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <ProjectPlan plan={project.projectPlanData.plan} />
       <ProjectStatus status={project.status} />
       <ProjectTeam team={project.users} />
+      <div className="detail-box">
+        <h4>{project.incidents.length}</h4>
+        <span>Incidentes</span>
+      </div>
+      <div className="detail-box">
+        <h4>
+          {project.incidents.filter((element) => element.item == "RFI").length}
+        </h4>
+        <span>RFI</span>
+      </div>
+      <div className="detail-box">
+        <h4>
+          {project.incidents.filter((element) => element.item == "task").length}
+        </h4>
+        <span>Tareas</span>
+      </div>
     </div>
   );
 };
