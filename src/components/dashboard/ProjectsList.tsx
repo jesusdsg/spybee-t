@@ -1,5 +1,5 @@
-import { Project, useDataStore } from "@/store/data.store";
-import React, { useState } from "react";
+import { Position, Project, useDataStore } from "@/store/data.store";
+import React, { useEffect, useState } from "react";
 import { ProjectCard } from "./ProjectCard";
 import styles from "@/styles/dashboard/ProjectList.module.css";
 import {
@@ -11,6 +11,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/solid";
+import ProjectMap from "./ProjectMap";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -23,6 +24,14 @@ export const ProjectsList = () => {
   const [sortCriteria, setSortCriteria] = useState<
     "title" | "incidents" | "rfis" | "tasks"
   >("title");
+
+  const [position, setPosition] = useState<Position>({
+    _id: "",
+    lat: -73.935242,
+    lng: 40.73061,
+  });
+
+  useEffect(() => {}, [position]);
 
   const panelListItems = [
     { id: 1, title: "Orden alfabético" },
@@ -193,7 +202,11 @@ export const ProjectsList = () => {
         <div className={styles.notFound}>No se encontraron coincidencias</div>
       )}
       {paginatedProjects?.map((project) => (
-        <ProjectCard key={project._id} project={project} />
+        <ProjectCard
+          setPosition={setPosition}
+          key={project._id}
+          project={project}
+        />
       ))}
 
       {/* some controls */}
@@ -214,6 +227,8 @@ export const ProjectsList = () => {
           <ChevronRightIcon className="icon" />
         </button>
       </div>
+
+      <ProjectMap position={position} />
     </div>
   );
 };

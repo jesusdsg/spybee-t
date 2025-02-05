@@ -1,5 +1,5 @@
-import { Project } from "@/store/data.store";
-import React from "react";
+import { Position, Project } from "@/store/data.store";
+import React, { Dispatch, SetStateAction } from "react";
 import styles from "@/styles/dashboard/ProjectCard.module.css";
 import Image from "next/image";
 import { formatISODateLong } from "@/utils/date";
@@ -9,11 +9,18 @@ import { ProjectTeam } from "./ProjectTeam";
 
 interface ProjectCardProps {
   project: Project;
+  setPosition?: Dispatch<SetStateAction<Position>>;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  project,
+  setPosition,
+}) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={setPosition ? () => setPosition(project.position) : undefined}
+    >
       <div>
         {project.img.includes("xxx") ? (
           <div className={styles.noImg}></div>

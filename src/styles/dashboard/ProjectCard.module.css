@@ -8,6 +8,12 @@
   padding: 0.5rem 1rem;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
+  transition-duration: 0.2s;
+}
+
+.container:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
 }
 
 .titleContainer {

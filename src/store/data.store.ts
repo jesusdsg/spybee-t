@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface Position {
+export interface Position {
   _id: string;
   lat: number;
   lng: number;
