@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  background: #fff;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.title {
+  font-size: 18px;
+  color: #68686c !important;
+}
+
+.date {
+  color: #8c8c90;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.noImg {
+  width: 60px;
+  height: 60px;
+  background-color: #3232;
+}

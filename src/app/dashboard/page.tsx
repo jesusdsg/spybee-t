@@ -1,4 +1,5 @@
 "use client";
+import { ProjectsList } from "@/components/dashboard/ProjectsList";
 import { useAuthStore } from "@/store/auth.store";
 
 import { useRouter } from "next/navigation";
@@ -17,8 +18,9 @@ const Dashboard = () => {
   if (!isAuthenticated) return null;
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#d1d1d1" }}>
       <h1>Welcome, {user}</h1>
+      <ProjectsList />
       <button onClick={() => logout()}>Logout</button>
     </div>
   );
