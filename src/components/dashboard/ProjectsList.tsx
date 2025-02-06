@@ -63,16 +63,6 @@ export const ProjectsList = () => {
     setOpenPanelList(false);
   };
 
-  /* const filteredProjects = projects
-    ?.filter((project) =>
-      project.title.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .sort((a, b) =>
-      isSortedAsc
-        ? a.title.localeCompare(b.title)
-        : b.title.localeCompare(a.title)
-    ); */
-
   const matchesSearch = (project: Project) => {
     const search = searchTerm.toLowerCase();
     return (
@@ -224,7 +214,11 @@ export const ProjectsList = () => {
 
           {/* list */}
           {paginatedProjects?.length == 0 && (
-            <div className={styles.notFound}>
+            <div
+              className={
+                openSidePanel ? styles.notFoundToggled : styles.notFound
+              }
+            >
               No se encontraron coincidencias
             </div>
           )}

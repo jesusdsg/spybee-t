@@ -19,7 +19,9 @@ const CircularChart: React.FC<CircularChartProps> = ({
       <h3 className={styles.chartLabel}>{label}</h3>
       <h1 className={styles.chartTotal}>{total}</h1>
       <p className={styles.chartSubtitle}>Total Abiertas</p>
+
       <div className={styles.progressRing}>
+        <div className={styles.chartInnerCircle}></div>
         <div
           className={styles.progressRingInner}
           style={{ "--percentage": percentage } as React.CSSProperties}

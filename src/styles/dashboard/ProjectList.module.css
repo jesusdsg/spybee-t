@@ -158,6 +158,11 @@
   margin: 2rem 1rem;
 }
 
+.notFoundToggled {
+  width: 100%;
+  margin: 2rem 1rem;
+}
+
 .mapContainer {
   width: 100%;
 }
