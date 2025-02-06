@@ -20,3 +20,9 @@
   background-color: #dba906;
   color: #6c6032;
 }
+
+@media screen and (max-width: 765px) {
+  .badget {
+    align-self: flex-start;
+  }
+}

@@ -203,3 +203,35 @@
   width: 40%;
   height: 40px;
 }
+
+@media screen and (max-width: 765px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+
+  .panelContainer {
+    display: grid;
+    width: 100%;
+    margin: 2rem;
+  }
+
+  .container {
+    margin: 0 0.5rem;
+  }
+
+  .panelSide {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .leftSide {
+    width: 50%;
+  }
+
+  .rightSide {
+    width: 50%;
+  }
+}

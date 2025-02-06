@@ -29,7 +29,7 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ position }) => {
     if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
         container: mapContainerRef.current,
-        style: "mapbox://styles/mapbox/satellite-streets-v12",
+        style: "mapbox://styles/mapbox/streets-v12",
         center: [position.lng, position.lat],
         zoom: 9,
         attributionControl: false,
