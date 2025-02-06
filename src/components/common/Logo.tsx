@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logoImg from "@/assets/spybee_logo_black.png";
+import logoImg from "@/assets/spybee_logo_white.png";
 import styles from "@/styles/Logo.module.css";
 
 interface LogoProps {

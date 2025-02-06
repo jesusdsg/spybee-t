@@ -28,7 +28,7 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ position }) => {
     if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
         container: mapContainerRef.current,
-        style: "mapbox://styles/mapbox/streets-v11",
+        style: "mapbox://styles/mapbox/satellite-streets-v12",
         center: [position.lng, position.lat],
         zoom: 9,
         attributionControl: false,
@@ -55,6 +55,7 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ position }) => {
     markerRefs.current = [];
 
     coordinatesData.forEach(({ lat, lng }) => {
+      console.log("Lat: ", lat, " Lng: ", lng);
       const newMarker = new mapboxgl.Marker()
         .setLngLat([lng, lat])
         .addTo(mapRef.current!);

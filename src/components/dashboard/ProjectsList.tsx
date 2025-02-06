@@ -10,7 +10,7 @@ import {
   PlusIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 import ProjectMap from "./ProjectMap";
 
 const ITEMS_PER_PAGE = 10;
