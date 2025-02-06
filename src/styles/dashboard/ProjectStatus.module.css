@@ -1,0 +1,29 @@
+.badget {
+  padding: 0rem 0.5rem;
+  border-radius: 5px;
+  font-size: 14px;
+  display: flex;
+  width: fit-content;
+  align-self: center;
+}
+
+.active {
+  background-color: #dcf0dc;
+  color: #4fa266;
+}
+
+.inactive {
+  background-color: #f0dfdc;
+  color: #a24f4f;
+}
+
+.pending {
+  background-color: #f0ebdc;
+  color: #a2814f;
+}
+
+@media screen and (max-width: 765px) {
+  .badget {
+    align-self: flex-start;
+  }
+}

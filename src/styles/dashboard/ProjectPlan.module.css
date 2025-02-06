@@ -1,0 +1,28 @@
+.badget {
+  padding: 0rem 0.5rem;
+  border-radius: 5px;
+  font-size: 14px;
+  width: fit-content;
+  align-self: center;
+}
+
+.big {
+  background-color: #7d7d7d;
+  color: #fff;
+}
+
+.small {
+  background-color: #c35a00;
+  color: #fff;
+}
+
+.premium {
+  background-color: #dba906;
+  color: #6c6032;
+}
+
+@media screen and (max-width: 765px) {
+  .badget {
+    align-self: flex-start;
+  }
+}
