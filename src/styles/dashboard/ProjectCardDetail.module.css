@@ -1,0 +1,31 @@
+.container {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tabsContainer {
+  gap: 1rem;
+}
+
+.tabsContainer button {
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  margin: 0 1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.tabsContainer button:hover {
+  border-bottom: 2px solid #fac30f;
+}
+
+.tabsContainer button:first-child {
+  border-bottom: 2px solid #fac30f;
+}

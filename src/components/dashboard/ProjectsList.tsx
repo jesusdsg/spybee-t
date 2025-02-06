@@ -12,6 +12,7 @@ import {
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
 import ProjectMap from "./ProjectMap";
+import { ProjectCardDetail } from "./ProjectCardDetail";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -253,7 +254,11 @@ export const ProjectsList = () => {
           </div>
         </div>
         {/* right */}
-        {openSidePanel && <div className={styles.rightSide}></div>}
+        {openSidePanel && (
+          <div className={styles.rightSide}>
+            <ProjectCardDetail />
+          </div>
+        )}
       </div>
     </div>
   );
