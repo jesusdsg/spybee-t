@@ -14,7 +14,7 @@ export const Header = () => {
 
   const handleLogout = () => {
     logout();
-    router.push("/");
+    router.push("/auth/login");
     setShowMenu(false);
   };
 

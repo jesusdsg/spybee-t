@@ -6,6 +6,20 @@
   --gray-soft: #d3d3d3;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -57,11 +71,7 @@ body {
 }
 
 .project-container {
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  align-items: center;
-  margin: auto;
+  padding: 1rem 2rem;
 }
 
 .icon {

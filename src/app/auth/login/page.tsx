@@ -4,13 +4,12 @@ import { useState } from "react";
 import { useAuthStore } from "@/store/auth.store";
 import { useRouter } from "next/navigation";
 import Button from "@/components/common/Button";
-import { Logo } from "@/components/common/Logo";
 import { Card } from "@/components/common/Card";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login, isAuthenticated } = useAuthStore();
+  const { login } = useAuthStore();
   const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {

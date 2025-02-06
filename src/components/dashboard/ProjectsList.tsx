@@ -13,6 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import ProjectMap from "./ProjectMap";
 import { ProjectCardDetail } from "./ProjectCardDetail";
+import { ToggleButton } from "../common/ToggleButton";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -49,6 +50,7 @@ export const ProjectsList = () => {
     switch (id) {
       case 1:
         setSortCriteria("title");
+        setIsSortedAsc(!isSortedAsc);
         break;
       case 2:
         setSortCriteria("incidents");
@@ -181,12 +183,10 @@ export const ProjectsList = () => {
         </div>
       </div>
 
-      <button
-        className={styles.buttonTogglePanel}
-        onClick={() => setOpenSidePanel(!openSidePanel)}
-      >
-        <ChevronLeftIcon className="icon" />
-      </button>
+      <ToggleButton
+        openSidePanel={openSidePanel}
+        setOpenSidePanel={setOpenSidePanel}
+      />
 
       <div className={styles.mainContainer}>
         {/* left */}

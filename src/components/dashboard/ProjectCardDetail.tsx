@@ -1,13 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "@/styles/dashboard/ProjectCardDetail.module.css";
 import {
-  ListBulletIcon,
-  Squares2X2Icon,
-  MapPinIcon,
-  MagnifyingGlassIcon,
-  PlusIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
   FunnelIcon,
   PresentationChartBarIcon,
 } from "@heroicons/react/24/outline";

@@ -167,24 +167,6 @@
   width: 100%;
 }
 
-.buttonTogglePanel {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  align-items: center;
-  display: flex;
-  border: none;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  position: absolute;
-  right: 1rem;
-  transition-duration: 0.3s;
-}
-
-.buttonTogglePanel:hover {
-  background-color: #e6e6e6;
-}
-
 .mainContainer {
   display: flex;
   flex-direction: row;
@@ -196,12 +178,11 @@
 }
 
 .leftSideToggled {
-  width: 60%;
+  width: 65%;
 }
 
 .rightSide {
-  width: 40%;
-  height: 40px;
+  width: 35%;
 }
 
 @media screen and (max-width: 765px) {

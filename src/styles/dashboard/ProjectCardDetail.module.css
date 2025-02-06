@@ -50,8 +50,10 @@
 
 .chartContainer {
   padding: 2rem 0rem;
-  display: inline-flex;
-  gap: 2rem;
+  display: flex;
+  overflow-x: scroll;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 765px) {
