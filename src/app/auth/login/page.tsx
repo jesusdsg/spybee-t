@@ -25,9 +25,8 @@ const Login = () => {
   };
 
   return (
-    <div className="auto">
+    <div className="auto mt-10">
       <Card>
-        <Logo size="medium" />
         <form onSubmit={handleSubmit}>
           <div className="form-item">
             <label htmlFor="username">Username</label>

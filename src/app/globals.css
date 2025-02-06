@@ -29,9 +29,13 @@ body {
   margin: auto;
 }
 
+.mt-10 {
+  margin-top: 10rem;
+}
+
 .input {
-  background-color: var(--gray-light);
-  padding: 0.5rem 1.5rem;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
   border: 1px solid var(--gray-soft);
   max-width: max-content;

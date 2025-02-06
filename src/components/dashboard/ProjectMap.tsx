@@ -56,7 +56,6 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ position }) => {
     markerRefs.current = [];
 
     coordinatesData.forEach(({ lat, lng }) => {
-      console.log("Lat: ", lat, " Lng: ", lng);
       const newMarker = new mapboxgl.Marker()
         .setLngLat([lng, lat])
         .addTo(mapRef.current!);
