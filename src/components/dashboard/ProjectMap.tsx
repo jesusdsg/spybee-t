@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import { Position, useDataStore } from "@/store/data.store";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
@@ -53,10 +54,6 @@ const ProjectMap: React.FC<ProjectMapProps> = ({ position }) => {
 
     markerRefs.current.forEach((marker) => marker.remove());
     markerRefs.current = [];
-
-    const coordinatesData = [
-      { lat: 10.9514212340517, lng: -74.79676373816898 },
-    ];
 
     coordinatesData.forEach(({ lat, lng }) => {
       console.log("Lat: ", lat, " Lng: ", lng);
