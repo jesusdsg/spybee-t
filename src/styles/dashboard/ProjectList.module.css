@@ -157,3 +157,45 @@
   width: 100%;
   margin: 2rem 1rem;
 }
+
+.mapContainer {
+  width: 100%;
+}
+
+.buttonTogglePanel {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  border: none;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  right: 1rem;
+  transition-duration: 0.3s;
+}
+
+.buttonTogglePanel:hover {
+  background-color: #e6e6e6;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.leftSide {
+  width: 100%;
+}
+
+.leftSideToggled {
+  width: 60%;
+}
+
+.rightSide {
+  width: 40%;
+  height: 40px;
+  background-color: red;
+}

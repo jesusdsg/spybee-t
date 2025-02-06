@@ -31,6 +31,8 @@ export const ProjectsList = () => {
     lng: 40.73061,
   });
 
+  const [openSidePanel, setOpenSidePanel] = useState(false);
+
   useEffect(() => {}, [position]);
 
   const panelListItems = [
@@ -156,6 +158,7 @@ export const ProjectsList = () => {
               <div className={styles.panelList}>
                 {panelListItems.map((item) => (
                   <button
+                    key={item.id}
                     aria-label="Botón menú panel"
                     onClick={() => sortByCriteria(item.id)}
                   >
@@ -185,50 +188,73 @@ export const ProjectsList = () => {
         </div>
       </div>
 
-      {/* basic header */}
-      <div className={styles.headerContainer}>
-        <h4>Proyecto</h4>
-        <h4></h4>
-        <h4>Plan</h4>
-        <h4>Estado</h4>
-        <h4>Equipo</h4>
-        <h4></h4>
-        <h4>Items por vencer</h4>
-        <h4></h4>
-      </div>
+      <button
+        className={styles.buttonTogglePanel}
+        onClick={() => setOpenSidePanel(!openSidePanel)}
+      >
+        <ChevronLeftIcon className="icon" />
+      </button>
 
-      {/* list */}
-      {paginatedProjects?.length == 0 && (
-        <div className={styles.notFound}>No se encontraron coincidencias</div>
-      )}
-      {paginatedProjects?.map((project) => (
-        <ProjectCard
-          setPosition={setPosition}
-          key={project._id}
-          project={project}
-        />
-      ))}
-
-      {/* some controls */}
-      <div className={styles.paginationContainer}>
-        <button
-          disabled={currentPage === 1}
-          onClick={() => setCurrentPage((prev) => prev - 1)}
+      <div className={styles.mainContainer}>
+        {/* left */}
+        <div
+          className={openSidePanel ? styles.leftSideToggled : styles.leftSide}
         >
-          <ChevronLeftIcon className="icon" />
-        </button>
-        <span>
-          Página {currentPage} de {totalPages}
-        </span>
-        <button
-          disabled={currentPage === totalPages}
-          onClick={() => setCurrentPage((prev) => prev + 1)}
-        >
-          <ChevronRightIcon className="icon" />
-        </button>
-      </div>
+          {/* the holy map */}
+          {openSidePanel && (
+            <div className={styles.mapContainer}>
+              <ProjectMap position={position} />
+            </div>
+          )}
 
-      <ProjectMap position={position} />
+          {/* basic header */}
+          <div className={styles.headerContainer}>
+            <h4>Proyecto</h4>
+            <h4></h4>
+            <h4>Plan</h4>
+            <h4>Estado</h4>
+            <h4>Equipo</h4>
+            <h4></h4>
+            <h4>Items por vencer</h4>
+            <h4></h4>
+          </div>
+
+          {/* list */}
+          {paginatedProjects?.length == 0 && (
+            <div className={styles.notFound}>
+              No se encontraron coincidencias
+            </div>
+          )}
+          {paginatedProjects?.map((project) => (
+            <ProjectCard
+              setPosition={setPosition}
+              key={project._id}
+              project={project}
+            />
+          ))}
+
+          {/* some controls */}
+          <div className={styles.paginationContainer}>
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((prev) => prev - 1)}
+            >
+              <ChevronLeftIcon className="icon" />
+            </button>
+            <span>
+              Página {currentPage} de {totalPages}
+            </span>
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage((prev) => prev + 1)}
+            >
+              <ChevronRightIcon className="icon" />
+            </button>
+          </div>
+        </div>
+        {/* right */}
+        {openSidePanel && <div className={styles.rightSide}></div>}
+      </div>
     </div>
   );
 };

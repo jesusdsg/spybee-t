@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
-import { Position } from "@/store/data.store";
+import { Position, useDataStore } from "@/store/data.store";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
@@ -9,51 +9,67 @@ interface ProjectMapProps {
 }
 
 const ProjectMap: React.FC<ProjectMapProps> = ({ position }) => {
-  const coordinates = { lat: position.lat, lng: position.lng };
-  const mapContainer = useRef(null);
+  const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
-  const markerRef = useRef<mapboxgl.Marker | null>(null);
+  const markerRefs = useRef<mapboxgl.Marker[]>([]);
+  const projects = useDataStore((state) => state.projects);
+
+  //map the coordinates from pos object
+  const coordinatesData = projects
+    ? projects.map((project) => ({
+        lat: project.position.lat,
+        lng: project.position.lng,
+      }))
+    : [];
 
   useEffect(() => {
-    if (mapContainer.current && !mapRef.current) {
+    if (!mapContainerRef.current) return;
+
+    if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
-        container: mapContainer.current,
+        container: mapContainerRef.current,
         style: "mapbox://styles/mapbox/streets-v11",
-        center: coordinates,
+        center: [position.lng, position.lat],
         zoom: 9,
+        attributionControl: false,
       });
 
-      new mapboxgl.Marker().setLngLat(coordinates).addTo(mapRef.current);
-    }
-
-    if (mapRef.current) {
+      mapRef.current.on("load", () => {
+        renderMarkers();
+      });
+    } else {
       mapRef.current.flyTo({
-        center: coordinates,
+        center: [position.lng, position.lat],
         essential: true,
         zoom: 9,
       });
-
-      if (markerRef.current) {
-        markerRef.current.setLngLat(coordinates);
-      } else {
-        markerRef.current = new mapboxgl.Marker()
-          .setLngLat(coordinates)
-          .addTo(mapRef.current);
-      }
-      const existingMarkers =
-        document.getElementsByClassName("mapboxgl-marker");
-      while (existingMarkers[0]) {
-        existingMarkers[0].parentNode?.removeChild(existingMarkers[0]);
-      }
     }
-  }, [coordinates]);
+
+    renderMarkers();
+  }, [position, projects]);
+
+  const renderMarkers = () => {
+    if (!mapRef.current) return;
+
+    markerRefs.current.forEach((marker) => marker.remove());
+    markerRefs.current = [];
+
+    coordinatesData.forEach(({ lat, lng }) => {
+      const newMarker = new mapboxgl.Marker()
+        .setLngLat([lng, lat])
+        .addTo(mapRef.current!);
+      markerRefs.current.push(newMarker);
+    });
+  };
 
   return (
     <div
-      ref={mapContainer}
+      ref={mapContainerRef}
       style={{
         height: "500px",
         width: "100%",
+        position: "relative",
+        overflow: "hidden",
       }}
     />
   );
