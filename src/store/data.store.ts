@@ -57,9 +57,19 @@ export interface Project {
   incidents: Incident[];
 }
 
+export interface SelectedProject {
+  id: string;
+  title: string;
+  incidents: number;
+  rfis: number;
+  tasks: number;
+}
+
 interface DataStore {
   projects: Project[] | null;
+  selectedProject: SelectedProject | null;
   setProject: (projects: Project[]) => void;
+  setSelectedProject: (project: SelectedProject) => void;
 }
 
 export const useDataStore = create<DataStore>((set) => ({
@@ -25180,4 +25190,6 @@ export const useDataStore = create<DataStore>((set) => ({
     },
   ],
   setProject: (projects) => set({ projects }),
+  selectedProject: null,
+  setSelectedProject: (project) => set({ selectedProject: project }),
 }));

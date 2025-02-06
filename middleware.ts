@@ -4,6 +4,7 @@ import { parseCookies } from "nookies";
 import { useAuthStore } from "@/store/auth.store";
 
 export async function middleware(req: NextRequest) {
+  console.log("Working");
   const { isAuthenticated } = useAuthStore.getState();
   const cookies = parseCookies({ req });
   const token = cookies.token;

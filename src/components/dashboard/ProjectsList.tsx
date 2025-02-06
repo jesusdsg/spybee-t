@@ -34,7 +34,9 @@ export const ProjectsList = () => {
 
   const [openSidePanel, setOpenSidePanel] = useState(false);
 
-  useEffect(() => {}, [position]);
+  useEffect(() => {
+    setOpenSidePanel(true);
+  }, [position]);
 
   const panelListItems = [
     { id: 1, title: "Orden alfabético" },

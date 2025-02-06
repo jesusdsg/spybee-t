@@ -10,6 +10,24 @@
   gap: 1rem;
 }
 
+.controlsContainer {
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter a {
+  font-weight: bold;
+}
+
 .tabsContainer {
   gap: 1rem;
 }
@@ -19,13 +37,19 @@
   font-size: 16px;
   background-color: transparent;
   margin: 0 1rem;
-  border-bottom: 2px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 
 .tabsContainer button:hover {
-  border-bottom: 2px solid #fac30f;
+  border-bottom: 4px solid #fac30f;
 }
 
 .tabsContainer button:first-child {
-  border-bottom: 2px solid #fac30f;
+  border-bottom: 4px solid #fac30f;
+}
+
+.chartContainer {
+  padding: 2rem 0rem;
+  display: inline-flex;
+  gap: 2rem;
 }

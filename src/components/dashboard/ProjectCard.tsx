@@ -1,4 +1,4 @@
-import { Position, Project } from "@/store/data.store";
+import { Position, Project, useDataStore } from "@/store/data.store";
 import React, { Dispatch, SetStateAction } from "react";
 import styles from "@/styles/dashboard/ProjectCard.module.css";
 import Image from "next/image";
@@ -16,11 +16,24 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
   setPosition,
 }) => {
+  const setProject = useDataStore((state) => state.setSelectedProject);
+
+  const handleClick = (project: Project) => {
+    if (setPosition) {
+      setPosition(project.position);
+    }
+    setProject({
+      id: project._id,
+      title: project.title,
+      incidents: project.incidents.length,
+      rfis: project.incidents.filter((element) => element.item == "RFI").length,
+      tasks: project.incidents.filter((element) => element.item == "task")
+        .length,
+    });
+  };
+
   return (
-    <div
-      className={styles.container}
-      onClick={setPosition ? () => setPosition(project.position) : undefined}
-    >
+    <div className={styles.container} onClick={() => handleClick(project)}>
       <div>
         {project.img.includes("xxx") ? (
           <div className={styles.noImg}></div>
