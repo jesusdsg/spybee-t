@@ -30,6 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       tasks: project.incidents.filter((element) => element.item == "task")
         .length,
     });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

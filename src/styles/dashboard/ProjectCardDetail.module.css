@@ -38,6 +38,7 @@
   background-color: transparent;
   margin: 0 1rem;
   border-bottom: 4px solid transparent;
+  margin-top: 1rem;
 }
 
 .tabsContainer button:hover {
@@ -48,10 +49,28 @@
   border-bottom: 4px solid #fac30f;
 }
 
-.chartContainer {
-  padding: 2rem 0rem;
+.time {
   display: flex;
-  overflow-x: scroll;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time h4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time a {
+  text-decoration: underline;
+  color: #2f64f7;
+}
+
+.chartContainer {
+  padding: 1rem 0rem;
+  display: flex;
+  overflow-y: scroll;
   justify-content: space-between;
   gap: 1rem;
 }
@@ -64,5 +83,6 @@
   .chartContainer {
     overflow-x: scroll;
     display: flex;
+    justify-items: center;
   }
 }
