@@ -34,7 +34,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div className={styles.container} onClick={() => handleClick(project)}>
-      <div>
+      <div className={styles.projectTitle}>
         {project.img.includes("xxx") ? (
           <div className={styles.noImg}></div>
         ) : (
@@ -47,13 +47,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             alt="Project Image"
           />
         )}
+        <div className={styles.titleContainer}>
+          <h4 className={styles.titleContainer}>{project.title}</h4>
+          <span className={styles.date}>
+            {formatISODateLong(project.createdAt)}
+          </span>
+        </div>
       </div>
-      <div className={styles.titleContainer}>
-        <h4 className={styles.titleContainer}>{project.title}</h4>
-        <span className={styles.date}>
-          {formatISODateLong(project.createdAt)}
-        </span>
-      </div>
+
       <ProjectPlan plan={project.projectPlanData.plan} />
       <ProjectStatus status={project.status} />
       <ProjectTeam team={project.users} />
