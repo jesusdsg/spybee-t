@@ -25,7 +25,7 @@ export const ProjectProgrammed = () => {
         <tbody>
           {incidents?.map((incident) => {
             return (
-              <tr>
+              <tr key={incident._id}>
                 <td>{incident.title}</td>
                 <td>Incidencia</td>
                 <td>
