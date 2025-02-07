@@ -16,6 +16,13 @@
   cursor: pointer;
 }
 
+.projectTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  grid-column: span 2;
+}
+
 .titleContainer {
   display: flex;
   flex-direction: column;
@@ -29,6 +36,7 @@
 
 .date {
   color: #8c8c90;
+  font-size: 12px;
 }
 
 .img {

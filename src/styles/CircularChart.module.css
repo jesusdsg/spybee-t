@@ -25,12 +25,13 @@
   margin: 0;
   font-size: 14px;
   color: #888;
+  height: 35px;
 }
 
 .progressRing {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin: 16px auto;
   display: flex;
   justify-content: center;
@@ -39,8 +40,8 @@
 
 .progressRingInner {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background: conic-gradient(
     #ff5a5f calc(var(--percentage, 0) * 1%),
@@ -61,8 +62,8 @@
 
 .chartInnerCircle {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background-color: white;
   border-radius: 50%;
   z-index: 2;

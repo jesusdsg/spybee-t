@@ -3,9 +3,11 @@ import styles from "@/styles/dashboard/ProjectCardDetail.module.css";
 import {
   FunnelIcon,
   PresentationChartBarIcon,
+  ClockIcon,
 } from "@heroicons/react/24/outline";
 import CircularChart from "../common/CircularChart";
 import { useDataStore } from "@/store/data.store";
+import { ProjectProgrammed } from "./ProjectProgrammed";
 
 export const ProjectCardDetail = () => {
   const selectedProject = useDataStore((state) => state.selectedProject);
@@ -28,6 +30,12 @@ export const ProjectCardDetail = () => {
           <a>Filtros</a>
         </div>
       </div>
+      <div className={styles.time}>
+        <h4>
+          <ClockIcon className="icon" /> Próximos a vencer
+        </h4>
+        <a>Ver todos</a>
+      </div>
       <div className={styles.chartContainer}>
         <CircularChart
           total={60}
@@ -35,16 +43,17 @@ export const ProjectCardDetail = () => {
           label="Incidencias"
         />
         <CircularChart
-          total={60}
+          total={50}
           value={selectedProject?.rfis ?? 0}
           label="RFI"
         />
         <CircularChart
-          total={60}
+          total={120}
           value={selectedProject?.tasks ?? 0}
           label="Tareas"
         />
       </div>
+      <ProjectProgrammed />
     </div>
   );
 };
